@@ -28,7 +28,7 @@ func Reset(s ServiceID) {
 func (s *serviceID) Init(sid int) {
 	s.Sid = sid
 	for k, v := range ErrInfo {
-		ErrInfo[k] = New(k, Msg(v))
+		ErrInfo[k] = New(k, v.Detail)
 	}
 }
 

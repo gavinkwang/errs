@@ -1,4 +1,4 @@
-module errs
+module gitlab.ctyuncdn.cn/wangzhk/errs
 
 go 1.19
 

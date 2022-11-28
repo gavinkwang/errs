@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package status;
+
+option go_package = "gitlab.ctyuncdn.cn/rcr/status/protos/goout/status";
+
+// 请求返回状态，success对应http状态码200, InternalError对应http状态码500
+message NewResponseStatus {
+  // 状态码,
+  // 1. Success
+  // 2. InternalError
+  string code = 1;
+  // 信息(展示给用户看的信息)
+  // 1. Success
+  // 2. An unknown error occurred while processing your request.
+  string message = 2;
+
+  // 详细信息(开发人员查看的信息)
+  string detail = 3;
+}
+
+// 通用的响应内容，可以作为删除、更新和错误的响应内容
+message NewResponse {
+  // 一个 API 请求的唯一标识
+  string requestId = 1;
+  // 返回的请求状态
+  status.NewResponseStatus status = 2;
+}

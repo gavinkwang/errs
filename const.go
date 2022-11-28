@@ -20,7 +20,7 @@ const (
 	DInnerErr = 40000 // D类错误，内部错误
 )
 
-var ErrInfo = map[int]error{
+var ErrInfo = map[int]*Error{
 	AUserErr: New(AUserErr, "用户类错误"),
 
 	BParamErr: New(BParamErr, "参数错误"),
